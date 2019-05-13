@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "lib": [
+      "es2018"
+    ],
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "rootDir": "src",
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "src/**/*.test.ts"
+  ]
+}

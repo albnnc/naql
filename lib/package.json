@@ -1,0 +1,37 @@
+{
+  "name": "naql",
+  "version": "0.1.0",
+  "description": "Not another query language",
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "api": "api-extractor run && api-documenter markdown -i api -o api",
+    "build": "webpack",
+    "code:format": "prettier './src/**/*.ts' --write",
+    "code:lint": "tslint './src/**/*.ts' --fix",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.1.7",
+    "@microsoft/api-extractor": "^7.1.5",
+    "@types/jest": "^24.0.12",
+    "circular-dependency-plugin": "^5.0.2",
+    "clean-webpack-plugin": "^2.0.2",
+    "jest": "^24.7.1",
+    "prettier": "^1.17.0",
+    "sqlite": "^3.0.3",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  }
+}

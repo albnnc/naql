@@ -1,0 +1,43 @@
+{
+  "linterOptions": {
+    "exclude": [
+      "build/**/*",
+      "node_modules/**/*"
+    ]
+  },
+  "rules": {
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
+    "member-ordering": [
+      true,
+      {
+        "alphabetize": true,
+        "order": [
+          "public-static-field",
+          "public-instance-field",
+          "public-constructor",
+          "private-static-field",
+          "private-instance-field",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "no-angle-bracket-type-assertion": true,
+    "no-default-export": true,
+    "no-inferrable-types": true,
+    "no-unnecessary-initializer": true,
+    "object-literal-shorthand": true,
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "lowercase-first"
+      }
+    ]
+  }
+}
