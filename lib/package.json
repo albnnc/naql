@@ -1,6 +1,6 @@
 {
   "name": "naql",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Not another query language",
   "homepage": "https://github.com/albnnc/naql",
   "repository": {
