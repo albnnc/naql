@@ -4,5 +4,5 @@ There is a common problem in specifying the query string format when designing R
 
 The idea of NAQL is to provide a recomedations on RESTful API query design, but also being quite flexible to adapt to various API specifications. This package consists of two parts:
 
-- [NAQL specification]();
-- [Node.js library]() (could be easily ported), which includes the parser from NAQL query string to JSON format, stringifier from JSON structure to NAQL and the converter to SQL query.
+- [NAQL specification](./spec);
+- [Node.js library](./lib) (could be easily ported), which includes the parser from NAQL query string to JSON format, stringifier from JSON structure to NAQL and the converter to SQL query.

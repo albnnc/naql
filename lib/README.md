@@ -80,8 +80,8 @@ const sqlified = naql.stringify(parameters, 'sql');
 
 ## Resources
 
-[API Documentation]()
-[NAQL Specification]()
+[API Documentation](./api)
+[NAQL Specification](../spec)
 
 ## Contributing
 
