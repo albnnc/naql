@@ -12,7 +12,7 @@ naql.parse('?alias=john&age=21~');
 // }, {
 //   name: 'age',
 //   operator: 'ge',
-//   operands: 21
+//   operands: [21]
 // }]
 ```
 
@@ -47,7 +47,7 @@ const naql = new Naql({
   }
 });
 
-naql.parser('?falsy');
+naql.parse('?falsy');
 ```
 
 ## SQL Requests
