@@ -2,6 +2,11 @@
   "name": "naql",
   "version": "0.1.0",
   "description": "Not another query language",
+  "homepage": "https://github.com/albnnc/naql",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albnnc/naql.git"
+  },
   "license": "MIT",
   "files": [
     "dist/"
