@@ -74,7 +74,7 @@ const parameters: Parameter[] = [
 ];
 
 const sqlified = naql.stringify(parameters, 'sql');
-// WHERE alias=john AND age>=21 ORDER BY date ASC
+// WHERE alias='john' AND age>=21 ORDER BY date ASC
 // sqlite.all('SELECT * from data ' + sqlified)
 ```
 
