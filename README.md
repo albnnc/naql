@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="./naql.png">
+  <img src="./naql.png" width="220" height="142">
 </p>
 
-# Not Another Query Language
+### Not Another Query Language
 
 There is a common problem in specifying the query string format when designing RESTful API. Existing solutions are FIQL, RSQL and RSQL. All of them are compliant with [URL syntax](https://tools.ietf.org/html/rfc3986), however they're not RESTful mostly.
 
