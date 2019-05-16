@@ -1,1 +1,1 @@
-export * from './stringifyQuery';
+export * from './stringifySqlQuery';

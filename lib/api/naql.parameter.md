@@ -4,6 +4,8 @@
 
 ## Parameter interface
 
+Base parameter interface.
+
 <b>Signature:</b>
 
 ```typescript

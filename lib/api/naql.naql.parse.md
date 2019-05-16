@@ -4,6 +4,8 @@
 
 ## Naql.parse() method
 
+Parses given string to array of parameters.
+
 <b>Signature:</b>
 
 ```typescript

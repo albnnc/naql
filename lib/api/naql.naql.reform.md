@@ -4,6 +4,8 @@
 
 ## Naql.reform() method
 
+Applies the array reformers to array of parameters.
+
 <b>Signature:</b>
 
 ```typescript

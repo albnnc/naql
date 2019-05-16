@@ -14,7 +14,7 @@
   "main": "dist/index.js",
   "scripts": {
     "api": "api-extractor run && api-documenter markdown -i api -o api",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "code:format": "prettier './src/**/*.ts' --write",
     "code:lint": "tslint './src/**/*.ts' --fix",
     "test": "jest"

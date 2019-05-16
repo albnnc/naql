@@ -1,6 +1,14 @@
-# NAQL Node.js Library
+# NAQL — Not Another Query Library
 
-This is a zero-dependency NAQL specification compilant parser and stringifier for Node.js. Check out the [API documentation]().
+<p>
+  🛠️ Highely configurable<br>
+  💯 Tested with Jest<br>
+  🙆 Zero dependencies<br>
+  💪 Built with TypeScript<br>
+  📗 Features <a href="./api/naql.md">API documentation</a>
+</p>
+
+This module correctly parses basic parameter notation, sort parameters and range tilde notation. However, you can extend module functionality either by providing custom prameter parser (it's easy), or by provinding entire custom query format parser. You can also add various stringifiers and call them later on parsed query.
 
 ```typescript
 const naql = new Naql();
@@ -15,8 +23,6 @@ naql.parse('?alias=john&age=21~');
 //   operands: [21]
 // }]
 ```
-
-This module correctly parses basic parameter notation, sort parameters and range tilde notation. However, you can extend module functionality either by providing custom prameter parser (it's easy), or by provinding entire custom query format parser. You can also add various stringifiers and call them later on parsed query.
 
 ## Custom Parameter Parser
 

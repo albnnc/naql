@@ -4,7 +4,7 @@
 
 ### Not Another Query Language
 
-There is a common problem in specifying the query string format when designing RESTful API. Existing solutions are FIQL, RSQL and RSQL. All of them are compliant with [URL syntax](https://tools.ietf.org/html/rfc3986), however they're not RESTful mostly.
+While it's a common problem to specify query string format for RESTful API, there are a few existing solutions, such as FIQL, RSQL and RSQL. All of them are compliant with [URL syntax](https://tools.ietf.org/html/rfc3986), however they're not RESTful mostly.
 
 The idea of NAQL is to provide a recomedations on RESTful API query design, but also being quite flexible to adapt to various API specifications. This package consists of two parts:
 

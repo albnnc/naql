@@ -1,6 +1,6 @@
 # NAQL — Not Another Query Language
 
-The following rules describe how the query string could be parsed to the array of parameters, each of which has the following [JSON Schema](https://json-schema.org/).
+The following rules describe the way of how the query string could be parsed to array of parameters, each of which has the following [JSON Schema](https://json-schema.org/).
 
 ```
 {
@@ -24,7 +24,7 @@ The following rules describe how the query string could be parsed to the array o
 
 ## General Rules
 
-**1.** _Query_ string MUST consists of only [URL allowed characters](https://tools.ietf.org/html/rfc3986#appendix-A). RESTful API developer MUST pick some characters of them to provide the _separator registry_, which used in the following specification. The recommended registry looks as follows.
+**1.** _Query_ string MUST consists of only [URL allowed characters](https://tools.ietf.org/html/rfc3986#appendix-A). RESTful API developer MUST pick some characters of them to provide the _separator registry_, which is used in following specification. The recommended registry looks as follows.
 
 | Separator | Symbol |
 | --------- | :----: |
@@ -33,9 +33,9 @@ The following rules describe how the query string could be parsed to the array o
 | operator  |   :    |
 | operand   |   ,    |
 
-Every other then separating occurence of separator character SHOULD be URI encoded.
+Every other then separating occurence of separator character MUST be URI encoded.
 
-**2.** _Query_ string MUST be splittable into the list of _parameters_ by the _parameter separator_.
+**2.** _Query_ string splits into array of _parameter_ strings by all occurences of the _parameter separator_.
 
 **3.** If _parameter_ string includes _name separator_, then it splits into _name_ and _value_ by the first occurence of _name separator_. If not, then the whole _parameter_ represents its _name_ and MUST be evaluated to `true`.
 
@@ -45,7 +45,7 @@ Every other then separating occurence of separator character SHOULD be URI encod
 
 ## Aliases
 
-One can use various notations, until they could be described as parameter name-value pair. For example, the following notations are recommended.
+One can use various notations, until they could be described as name-value pair — it's necessary for RESTful API. For example, the following notations are recommended.
 
 ```
 /items?prop=+sort

@@ -4,6 +4,8 @@
 
 ## Stringifier type
 
+Stringifies given data of specified type.
+
 <b>Signature:</b>
 
 ```typescript

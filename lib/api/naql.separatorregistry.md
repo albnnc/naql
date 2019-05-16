@@ -4,6 +4,8 @@
 
 ## SeparatorRegistry class
 
+Separator registry, follows NAQL specification.
+
 <b>Signature:</b>
 
 ```typescript

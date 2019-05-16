@@ -4,6 +4,8 @@
 
 ## Naql.stringify() method
 
+Stringifies given array of parameters.
+
 <b>Signature:</b>
 
 ```typescript

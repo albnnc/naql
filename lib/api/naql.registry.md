@@ -4,6 +4,8 @@
 
 ## Registry class
 
+The global registry for Naql instance.
+
 <b>Signature:</b>
 
 ```typescript

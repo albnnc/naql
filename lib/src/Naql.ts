@@ -1,27 +1,37 @@
 import { Parameter, Reformer, Registry, SeparatorRegistry } from './models';
-import * as urlParsers from './parsers/url';
+import {
+  createQueryParser,
+  parseFlag,
+  parseParameter,
+  parseRange,
+  parseSort
+} from './parsers';
 import { reformFromUri, reformToNumber, reformToUri } from './reformers';
-import * as sqlStringifiers from './stringifiers/sql';
-import * as urlStringifiers from './stringifiers/url';
+import {
+  createQueryStringifier,
+  stringifyParameter,
+  stringifyRange,
+  stringifySort,
+  stringifySqlQuery
+} from './stringifiers';
 
+/**
+ * The main class which includes registry, parsers, stringifiers
+ * and reformers. Configurable through constructor.
+ */
 export class Naql {
   registry: Registry = {
     separators: new SeparatorRegistry(),
     parsers: {
-      url: urlParsers.createQueryParser([
-        urlParsers.parseFlag,
-        urlParsers.parseRange,
-        urlParsers.parseSort,
-        urlParsers.parseParameter
-      ])
+      url: createQueryParser([parseFlag, parseRange, parseSort, parseParameter])
     },
     stringifiers: {
-      url: urlStringifiers.createQueryStringifier([
-        urlStringifiers.stringifyRange,
-        urlStringifiers.stringifySort,
-        urlStringifiers.stringifyParameter
+      url: createQueryStringifier([
+        stringifyRange,
+        stringifySort,
+        stringifyParameter
       ]),
-      sql: sqlStringifiers.stringifyQuery
+      sql: stringifySqlQuery
     },
     reformers: {
       parse: [reformFromUri, reformToNumber],
@@ -29,10 +39,19 @@ export class Naql {
     }
   };
 
+  /**
+   * @param registry Custom registry to be shallow merged into the default one.
+   */
   constructor(registry?: Registry) {
     this.registry = { ...this.registry, ...(registry || {}) };
   }
 
+  /**
+   * Parses given string to array of parameters.
+   *
+   * @param source String to be parsed.
+   * @param parserName Parser to use from registry.
+   */
   parse(source: string, parserName = 'url'): Parameter[] {
     const parser = this.registry.parsers[parserName];
     if (!parser) {
@@ -42,6 +61,12 @@ export class Naql {
     return this.reform(parsed, this.registry.reformers.parse);
   }
 
+  /**
+   * Applies the array reformers to array of parameters.
+   *
+   * @param parameters Input array of parameters
+   * @param reformers Reformers to apply.
+   */
   reform(
     parameters: Parameter[],
     reformers: Reformer<Parameter>[]
@@ -51,6 +76,12 @@ export class Naql {
     );
   }
 
+  /**
+   * Stringifies given array of parameters.
+   *
+   * @param parameters Input parameters.
+   * @param stringifierName Stringifier from registry name to use.
+   */
   stringify(parameters: Parameter[], stringifierName = 'url') {
     const reformed = this.reform(parameters, this.registry.reformers.stringify);
     const stringifier = this.registry.stringifiers[stringifierName];

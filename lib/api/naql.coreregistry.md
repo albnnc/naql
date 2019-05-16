@@ -4,6 +4,8 @@
 
 ## CoreRegistry class
 
+Core, basic registry of thing to be passed down.
+
 <b>Signature:</b>
 
 ```typescript

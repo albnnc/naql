@@ -1,3 +1,6 @@
+/**
+ * Splits string on the first occurence of sperator.
+ */
 export const separate = (source: string, separator: string): string[] => {
   const splits = source.split(separator);
   if (splits.length > 2) {

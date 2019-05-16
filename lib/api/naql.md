@@ -8,22 +8,41 @@
 
 |  Class | Description |
 |  --- | --- |
-|  [CoreRegistry](./naql.coreregistry.md) |  |
-|  [Naql](./naql.naql.md) |  |
-|  [Registry](./naql.registry.md) |  |
-|  [SeparatorRegistry](./naql.separatorregistry.md) |  |
+|  [CoreRegistry](./naql.coreregistry.md) | Core, basic registry of thing to be passed down. |
+|  [Naql](./naql.naql.md) | The main class which includes registry, parsers, stringifiers and reformers. Configurable through constructor. |
+|  [Registry](./naql.registry.md) | The global registry for Naql instance. |
+|  [SeparatorRegistry](./naql.separatorregistry.md) | Separator registry, follows NAQL specification. |
 
 ## Interfaces
 
 |  Interface | Description |
 |  --- | --- |
-|  [Parameter](./naql.parameter.md) |  |
+|  [Parameter](./naql.parameter.md) | Base parameter interface. |
+
+## Variables
+
+|  Variable | Description |
+|  --- | --- |
+|  [createQueryParser](./naql.createqueryparser.md) | Creates a query parser to take URL as input. The creator function takes an array of parameter parser functions to be called on each string formatted parameter. Fhe first troothy returned value will be used as parsed value for string parameter. |
+|  [createQueryStringifier](./naql.createquerystringifier.md) | Creates URL query stringifier. The creator function takes an array of parameter stringifier functions to be called on each string formatted parameter. Fhe first troothy returned value will be used as stringified value for source parameter. |
+|  [parseFlag](./naql.parseflag.md) | Parses boolean flag-like strings to parameter structure. |
+|  [parseParameter](./naql.parseparameter.md) | The basic parameter parser. Tries to find an operator; if found, sets it. If not, the default is used (<code>'eq'</code>). |
+|  [parseRange](./naql.parserange.md) | Parses range-like constructions. Range might be open and closed, and the result operators are <code>'le'</code>, <code>'ge'</code> and 'bt'<!-- -->\` (between). |
+|  [parseSort](./naql.parsesort.md) | Parses sort parameters to parameter structure. |
+|  [reformFromUri](./naql.reformfromuri.md) | Applies URI decoding to parameter strings. |
+|  [reformToNumber](./naql.reformtonumber.md) | If could be done, parses each parameter operand to number. If not, leaves parameter as string. |
+|  [reformToUri](./naql.reformtouri.md) | Applies URI encoding to parameter strings. |
+|  [separate](./naql.separate.md) | Splits string on the first occurence of sperator. |
+|  [stringifyParameter](./naql.stringifyparameter.md) | Basic parameter stringifier. |
+|  [stringifyRange](./naql.stringifyrange.md) | Stringifies parameter to range-like string if possible. |
+|  [stringifySort](./naql.stringifysort.md) | Stringifies parameter to sort parameter string if possible. |
+|  [stringifySqlQuery](./naql.stringifysqlquery.md) | Makes an SQL query from paraeter array. Not includes parts like <code>SELECT * FROM data</code> and the trailing <code>;</code>. |
 
 ## Type Aliases
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [Parser](./naql.parser.md) |  |
+|  [Parser](./naql.parser.md) | Callable instance, function. Must provide parsed either specified type as result or <code>undefined</code>, if the input <code>source</code> could not be parsed. |
 |  [Reformer](./naql.reformer.md) |  |
-|  [Stringifier](./naql.stringifier.md) |  |
+|  [Stringifier](./naql.stringifier.md) | Stringifies given data of specified type. |
 
