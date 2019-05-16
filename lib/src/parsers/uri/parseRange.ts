@@ -3,7 +3,7 @@ import { separate } from '../../utils';
 
 /**
  * Parses range-like constructions. Range might be open and closed,
- * and the result operators are `'le'`, `'ge'` and 'bt'` (between).
+ * and the result operators are `'le'`, `'ge'` and `'bt'` (between).
  */
 export const parseRange: Parser<Parameter> = (source, { separators }) => {
   const [name, value] = separate(source, separators.name);

@@ -27,7 +27,7 @@
 |  [createQueryStringifier](./naql.createquerystringifier.md) | Creates URL query stringifier. The creator function takes an array of parameter stringifier functions to be called on each string formatted parameter. Fhe first troothy returned value will be used as stringified value for source parameter. |
 |  [parseFlag](./naql.parseflag.md) | Parses boolean flag-like strings to parameter structure. |
 |  [parseParameter](./naql.parseparameter.md) | The basic parameter parser. Tries to find an operator; if found, sets it. If not, the default is used (<code>'eq'</code>). |
-|  [parseRange](./naql.parserange.md) | Parses range-like constructions. Range might be open and closed, and the result operators are <code>'le'</code>, <code>'ge'</code> and 'bt'<!-- -->\` (between). |
+|  [parseRange](./naql.parserange.md) | Parses range-like constructions. Range might be open and closed, and the result operators are <code>'le'</code>, <code>'ge'</code> and <code>'bt'</code> (between). |
 |  [parseSort](./naql.parsesort.md) | Parses sort parameters to parameter structure. |
 |  [reformFromUri](./naql.reformfromuri.md) | Applies URI decoding to parameter strings. |
 |  [reformToNumber](./naql.reformtonumber.md) | If could be done, parses each parameter operand to number. If not, leaves parameter as string. |

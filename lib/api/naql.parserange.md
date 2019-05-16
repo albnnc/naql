@@ -4,7 +4,7 @@
 
 ## parseRange variable
 
-Parses range-like constructions. Range might be open and closed, and the result operators are `'le'`<!-- -->, `'ge'` and 'bt'<!-- -->\` (between).
+Parses range-like constructions. Range might be open and closed, and the result operators are `'le'`<!-- -->, `'ge'` and `'bt'` (between).
 
 <b>Signature:</b>
 
