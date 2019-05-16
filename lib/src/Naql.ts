@@ -1,4 +1,4 @@
-import { Parameter, Reformer, Registry, SeparatorRegistry } from './models';
+import { Parameter, Registry, SeparatorRegistry, Transformer } from './models';
 import {
   createQueryParser,
   parseFlag,
@@ -6,7 +6,6 @@ import {
   parseRange,
   parseSort
 } from './parsers';
-import { reformFromUri, reformToNumber, reformToUri } from './reformers';
 import {
   createQueryStringifier,
   stringifyParameter,
@@ -14,10 +13,15 @@ import {
   stringifySort,
   stringifySqlQuery
 } from './stringifiers';
+import {
+  transformFromUri,
+  transformToNumber,
+  transformToUri
+} from './transformers';
 
 /**
  * The main class which includes registry, parsers, stringifiers
- * and reformers. Configurable through constructor.
+ * and transformers. Configurable through constructor.
  */
 export class Naql {
   registry: Registry = {
@@ -33,9 +37,9 @@ export class Naql {
       ]),
       sql: stringifySqlQuery
     },
-    reformers: {
-      parse: [reformFromUri, reformToNumber],
-      stringify: [reformToUri]
+    transformers: {
+      parse: [transformFromUri, transformToNumber],
+      stringify: [transformToUri]
     }
   };
 
@@ -58,22 +62,7 @@ export class Naql {
       throw 'no such parser';
     }
     const parsed = parser.call(null, source, this.registry);
-    return this.reform(parsed, this.registry.reformers.parse);
-  }
-
-  /**
-   * Applies the array reformers to array of parameters.
-   *
-   * @param parameters Input array of parameters
-   * @param reformers Reformers to apply.
-   */
-  reform(
-    parameters: Parameter[],
-    reformers: Reformer<Parameter>[]
-  ): Parameter[] {
-    return parameters.map(parameter =>
-      reformers.reduce((a, b) => b(a, this.registry), parameter)
-    );
+    return this.transform(parsed, this.registry.transformers.parse);
   }
 
   /**
@@ -83,11 +72,29 @@ export class Naql {
    * @param stringifierName Stringifier from registry name to use.
    */
   stringify(parameters: Parameter[], stringifierName = 'url') {
-    const reformed = this.reform(parameters, this.registry.reformers.stringify);
+    const transformed = this.transform(
+      parameters,
+      this.registry.transformers.stringify
+    );
     const stringifier = this.registry.stringifiers[stringifierName];
     if (!stringifier) {
       throw 'no such stringifier';
     }
-    return stringifier.call(null, reformed, this.registry);
+    return stringifier.call(null, transformed, this.registry);
+  }
+
+  /**
+   * Applies the array transformers to array of parameters.
+   *
+   * @param parameters Input array of parameters
+   * @param transformers Transformers to apply.
+   */
+  transform(
+    parameters: Parameter[],
+    transformers: Transformer<Parameter>[]
+  ): Parameter[] {
+    return parameters.map(parameter =>
+      transformers.reduce((a, b) => b(a, this.registry), parameter)
+    );
   }
 }

@@ -1,8 +1,8 @@
 import { CoreRegistry, Parameter } from '../models';
-import { reformToNumber } from './reformToNumber';
+import { transformToNumber } from './transformToNumber';
 
 const fn = (parameter: Parameter) =>
-  reformToNumber(parameter, new CoreRegistry());
+  transformToNumber(parameter, new CoreRegistry());
 
 test('cast operands to numbers if possible', () => {
   expect(

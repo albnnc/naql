@@ -4,7 +4,7 @@
 
 ## Naql class
 
-The main class which includes registry, parsers, stringifiers and reformers. Configurable through constructor.
+The main class which includes registry, parsers, stringifiers and transformers. Configurable through constructor.
 
 <b>Signature:</b>
 
@@ -23,6 +23,6 @@ export declare class Naql
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
 |  [parse(source, parserName)](./naql.naql.parse.md) |  | Parses given string to array of parameters. |
-|  [reform(parameters, reformers)](./naql.naql.reform.md) |  | Applies the array reformers to array of parameters. |
 |  [stringify(parameters, stringifierName)](./naql.naql.stringify.md) |  | Stringifies given array of parameters. |
+|  [transform(parameters, transformers)](./naql.naql.transform.md) |  | Applies the array transformers to array of parameters. |
 

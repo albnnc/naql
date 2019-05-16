@@ -8,7 +8,13 @@
   📗 Features <a href="./api/naql.md">API documentation</a>
 </p>
 
-This module correctly parses basic parameter notation, sort parameters and range tilde notation. However, you can extend module functionality either by providing custom prameter parser (it's easy), or by provinding entire custom query format parser. You can also add various stringifiers and call them later on parsed query.
+```
+npm i -S naql
+```
+
+## Basic Usage
+
+Parsing query:
 
 ```typescript
 const naql = new Naql();
@@ -23,6 +29,26 @@ naql.parse('?alias=john&age=21~');
 //   operands: [21]
 // }]
 ```
+
+Stringifying:
+
+```typescript
+naql.stringify([
+  {
+    name: 'alias',
+    operator: 'eq',
+    operands: ['john']
+  },
+  {
+    name: 'age',
+    operator: 'ge',
+    operands: [21]
+  }
+]);
+// '?alias=john&age=21~'
+```
+
+The library correctly parses basic parameter notation, sort parameters and range tilde notation. However, you can extend module functionality either by providing custom prameter parser (it's easy), or by provinding entire custom query format parser. You can also add various stringifiers and call them later on parsed query.
 
 ## Custom Parameter Parser
 
@@ -83,6 +109,27 @@ const sqlified = naql.stringify(parameters, 'sql');
 // WHERE alias='john' AND age>=21 ORDER BY date ASC
 // sqlite.all('SELECT * from data ' + sqlified)
 ```
+
+## Transformers
+
+You can pass the transformers option to your registry when creating `Naql` instance to transform your data after parsing and before stringifying. The following example applies camelCase to parameter name after parsing process.
+
+```typescript
+const transformToCamelCase: Transformer<Parameter> = parameter => {
+  return {
+    ...parameter,
+    name: _.camelCase(parameter.name)
+  };
+};
+const naql = new Naql({
+  transformers: {
+    parse: [transformFromUri, transformToNumber, transformToCamelCase],
+    stringify: [transformToUri]
+  }
+});
+```
+
+Note that you should't forget about core transformers if you still want to use them. The registry merged not deeply but shallow only in constructor.
 
 ## Resources
 

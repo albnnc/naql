@@ -43,6 +43,22 @@ Every other then separating occurence of separator character MUST be URI encoded
 
 **5.** _Operands_ string splits into array of _operands_ by all occurences of the _operand separator_.
 
+## Parameter Names
+
+Parameter names could be an object path, following the [JSON Pointer](https://tools.ietf.org/html/rfc6901) like notation. The common way of representing it is using the dots as divider for the path segments:
+
+```
+/items?some.nested.param=value
+```
+
+The good practice is to keep URI lower-cased, so the kebab-case is widely used to represent a URI segment. However, kebab-case isn't usually used in programming languages or DB structures, so it becomes a problem to sync the kebab-cased query with the real requests.
+
+```
+/users?registration-date=2011-10-05
+```
+
+For the purpose described above it's recommended to use transformers which would be applied directly after parsing process or before stringifying — this option SHOULD be provided by every NAQL implementation library.
+
 ## Aliases
 
 One can use various notations, until they could be described as name-value pair — it's necessary for RESTful API. For example, the following notations are recommended.

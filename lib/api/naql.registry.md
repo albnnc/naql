@@ -17,6 +17,6 @@ export declare class Registry extends CoreRegistry
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
 |  [parsers](./naql.registry.parsers.md) |  | <code>{</code><br/><code>        [name: string]: Parser&lt;Parameter[]&gt;;</code><br/><code>    }</code> |  |
-|  [reformers](./naql.registry.reformers.md) |  | <code>{</code><br/><code>        parse: Reformer&lt;Parameter&gt;[];</code><br/><code>        stringify: Reformer&lt;Parameter&gt;[];</code><br/><code>    }</code> |  |
 |  [stringifiers](./naql.registry.stringifiers.md) |  | <code>{</code><br/><code>        [name: string]: Stringifier&lt;Parameter[]&gt;;</code><br/><code>    }</code> |  |
+|  [transformers](./naql.registry.transformers.md) |  | <code>{</code><br/><code>        parse: Transformer&lt;Parameter&gt;[];</code><br/><code>        stringify: Transformer&lt;Parameter&gt;[];</code><br/><code>    }</code> |  |
 

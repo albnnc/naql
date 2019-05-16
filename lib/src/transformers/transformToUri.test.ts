@@ -1,7 +1,8 @@
 import { CoreRegistry, Parameter } from '../models';
-import { reformToUri } from './reformToUri';
+import { transformToUri } from './transformToUri';
 
-const fn = (parameter: Parameter) => reformToUri(parameter, new CoreRegistry());
+const fn = (parameter: Parameter) =>
+  transformToUri(parameter, new CoreRegistry());
 
 test('decode uri in strings', () => {
   expect(

@@ -9,7 +9,7 @@
 |  Class | Description |
 |  --- | --- |
 |  [CoreRegistry](./naql.coreregistry.md) | Core, basic registry of things to be passed down. |
-|  [Naql](./naql.naql.md) | The main class which includes registry, parsers, stringifiers and reformers. Configurable through constructor. |
+|  [Naql](./naql.naql.md) | The main class which includes registry, parsers, stringifiers and transformers. Configurable through constructor. |
 |  [Registry](./naql.registry.md) | The global registry for the <code>Naql</code> instance. |
 |  [SeparatorRegistry](./naql.separatorregistry.md) | Separator registry, follows NAQL specification. |
 
@@ -29,20 +29,20 @@
 |  [parseParameter](./naql.parseparameter.md) | The basic parameter parser. Tries to find an operator; if found, sets it. If not, the default is used (<code>'eq'</code>). |
 |  [parseRange](./naql.parserange.md) | Parses range-like constructions. Range might be open and closed, and the result operators are <code>'le'</code>, <code>'ge'</code> and <code>'bt'</code> (between). |
 |  [parseSort](./naql.parsesort.md) | Parses sort parameters to parameter structure. |
-|  [reformFromUri](./naql.reformfromuri.md) | Applies URI decoding to parameter strings. |
-|  [reformToNumber](./naql.reformtonumber.md) | If could be done, parses each parameter operand to number. If not, leaves parameter as string. |
-|  [reformToUri](./naql.reformtouri.md) | Applies URI encoding to parameter strings. |
 |  [separate](./naql.separate.md) | Splits string on the first occurence of sperator. |
 |  [stringifyParameter](./naql.stringifyparameter.md) | Basic parameter stringifier. |
 |  [stringifyRange](./naql.stringifyrange.md) | Stringifies parameter to range-like string if possible. |
 |  [stringifySort](./naql.stringifysort.md) | Stringifies parameter to sort parameter string if possible. |
 |  [stringifySqlQuery](./naql.stringifysqlquery.md) | Makes an SQL query from parameter array. Not includes parts like <code>SELECT * FROM data</code> and the trailing <code>;</code>. |
+|  [transformFromUri](./naql.transformfromuri.md) | Applies URI decoding to parameter strings. |
+|  [transformToNumber](./naql.transformtonumber.md) | If could be done, parses each parameter operand to number. If not, leaves parameter as string. |
+|  [transformToUri](./naql.transformtouri.md) | Applies URI encoding to parameter strings. |
 
 ## Type Aliases
 
 |  Type Alias | Description |
 |  --- | --- |
 |  [Parser](./naql.parser.md) | A function that must provide parsed either specified type as result or <code>undefined</code>, if the input <code>source</code> could not be parsed. |
-|  [Reformer](./naql.reformer.md) |  |
 |  [Stringifier](./naql.stringifier.md) | Stringifies given data of specified type. |
+|  [Transformer](./naql.transformer.md) |  |
 

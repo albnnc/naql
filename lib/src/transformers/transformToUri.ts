@@ -1,9 +1,9 @@
-import { Parameter, Reformer } from '../models';
+import { Parameter, Transformer } from '../models';
 
 /**
  * Applies URI encoding to parameter strings.
  */
-export const reformToUri: Reformer<Parameter> = parameter => {
+export const transformToUri: Transformer<Parameter> = parameter => {
   const transform = v => {
     if (typeof v === 'string') {
       return encodeURIComponent(v);

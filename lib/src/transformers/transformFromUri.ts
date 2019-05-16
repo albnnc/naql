@@ -1,9 +1,9 @@
-import { Parameter, Reformer } from '../models';
+import { Parameter, Transformer } from '../models';
 
 /**
  * Applies URI decoding to parameter strings.
  */
-export const reformFromUri: Reformer<Parameter> = parameter => {
+export const transformFromUri: Transformer<Parameter> = parameter => {
   const transform = v => {
     if (typeof v === 'string') {
       return decodeURIComponent(v);
