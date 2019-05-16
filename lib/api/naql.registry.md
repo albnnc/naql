@@ -4,7 +4,7 @@
 
 ## Registry class
 
-The global registry for Naql instance.
+The global registry for the `Naql` instance.
 
 <b>Signature:</b>
 

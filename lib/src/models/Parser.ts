@@ -1,7 +1,7 @@
 import { CoreRegistry } from './Registry/CoreRegistry';
 
 /**
- * Callable instance, function. Must provide parsed either
+ * A function that must provide parsed either
  * specified type as result or `undefined`, if the input `source`
  * could not be parsed.
  *

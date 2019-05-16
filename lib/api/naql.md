@@ -8,9 +8,9 @@
 
 |  Class | Description |
 |  --- | --- |
-|  [CoreRegistry](./naql.coreregistry.md) | Core, basic registry of thing to be passed down. |
+|  [CoreRegistry](./naql.coreregistry.md) | Core, basic registry of things to be passed down. |
 |  [Naql](./naql.naql.md) | The main class which includes registry, parsers, stringifiers and reformers. Configurable through constructor. |
-|  [Registry](./naql.registry.md) | The global registry for Naql instance. |
+|  [Registry](./naql.registry.md) | The global registry for the <code>Naql</code> instance. |
 |  [SeparatorRegistry](./naql.separatorregistry.md) | Separator registry, follows NAQL specification. |
 
 ## Interfaces
@@ -36,13 +36,13 @@
 |  [stringifyParameter](./naql.stringifyparameter.md) | Basic parameter stringifier. |
 |  [stringifyRange](./naql.stringifyrange.md) | Stringifies parameter to range-like string if possible. |
 |  [stringifySort](./naql.stringifysort.md) | Stringifies parameter to sort parameter string if possible. |
-|  [stringifySqlQuery](./naql.stringifysqlquery.md) | Makes an SQL query from paraeter array. Not includes parts like <code>SELECT * FROM data</code> and the trailing <code>;</code>. |
+|  [stringifySqlQuery](./naql.stringifysqlquery.md) | Makes an SQL query from parameter array. Not includes parts like <code>SELECT * FROM data</code> and the trailing <code>;</code>. |
 
 ## Type Aliases
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [Parser](./naql.parser.md) | Callable instance, function. Must provide parsed either specified type as result or <code>undefined</code>, if the input <code>source</code> could not be parsed. |
+|  [Parser](./naql.parser.md) | A function that must provide parsed either specified type as result or <code>undefined</code>, if the input <code>source</code> could not be parsed. |
 |  [Reformer](./naql.reformer.md) |  |
 |  [Stringifier](./naql.stringifier.md) | Stringifies given data of specified type. |
 

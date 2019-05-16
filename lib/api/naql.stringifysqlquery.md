@@ -4,7 +4,7 @@
 
 ## stringifySqlQuery variable
 
-Makes an SQL query from paraeter array. Not includes parts like `SELECT * FROM data` and the trailing `;`<!-- -->.
+Makes an SQL query from parameter array. Not includes parts like `SELECT * FROM data` and the trailing `;`<!-- -->.
 
 <b>Signature:</b>
 

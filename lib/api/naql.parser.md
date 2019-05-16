@@ -4,7 +4,7 @@
 
 ## Parser type
 
-Callable instance, function. Must provide parsed either specified type as result or `undefined`<!-- -->, if the input `source` could not be parsed.
+A function that must provide parsed either specified type as result or `undefined`<!-- -->, if the input `source` could not be parsed.
 
 <b>Signature:</b>
 

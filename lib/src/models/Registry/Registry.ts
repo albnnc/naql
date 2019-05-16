@@ -5,7 +5,7 @@ import { Stringifier } from '../Stringifier';
 import { CoreRegistry } from './CoreRegistry';
 
 /**
- * The global registry for Naql instance.
+ * The global registry for the `Naql` instance.
  */
 export class Registry extends CoreRegistry {
   parsers = {} as {
